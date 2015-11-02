@@ -38,6 +38,9 @@ NKMyNumber.searchMyNumbers = function(str) {
     }
     //search myNumbers
     var arr = str.match(/[^0-9]+[0-9]{12}[^0-9]+|^[0-9]{12}$/gm);
+    if(!arr){
+       return null;
+    }
     var myNumbers = [];
     for (var i = 0; i < arr.length; i++) {
         arr[i] = (arr[i].match(/[0-9]{12}/))[0];
